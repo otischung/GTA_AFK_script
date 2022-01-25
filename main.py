@@ -45,13 +45,19 @@ def mouseMovement():
 
 
 def nightclubBuyWeaponSupplies():
-    # pydirectinput.keyDown("enter")  # Access the master control terminal
-    # time.sleep(0.1)
-    # pydirectinput.keyUp("enter")
-    # time.sleep(3)
-    pydirectinput.keyDown("shift")  # Register to CEO
+    pydirectinput.keyDown("e")  # Sit down
     time.sleep(0.1)
-    pydirectinput.keyUp("shift")
+    pydirectinput.keyUp("e")
+    time.sleep(7)
+    pydirectinput.keyDown("enter")  # Access the master control terminal
+    time.sleep(0.1)
+    pydirectinput.keyUp("enter")
+    time.sleep(3)
+    autoit.mouse_move(1280, 700)  # Move to gunrunning supplies
+    time.sleep(1)
+    pydirectinput.keyDown("ctrlleft")  # Register to CEO
+    time.sleep(0.1)
+    pydirectinput.keyUp("ctrlleft")
     time.sleep(2)
     autoit.mouse_move(1280, 700)  # Gunrunning supplies
     keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
@@ -85,14 +91,35 @@ def nightclubBuyWeaponSupplies():
     pydirectinput.keyDown("esc")  # Back to master control terminal
     time.sleep(0.1)
     pydirectinput.keyUp("esc")
-    # time.sleep(3)
-    # pydirectinput.keyDown("esc")  # Back to GTA main menu
-    # time.sleep(0.1)
-    # pydirectinput.keyUp("esc")
-    # time.sleep(1)
-    # pydirectinput.keyDown("esc")  # Back to the chair
-    # time.sleep(0.1)
-    # pydirectinput.keyUp("esc")
+    time.sleep(3)
+    pydirectinput.keyDown("esc")  # Back to GTA main menu
+    time.sleep(0.1)
+    pydirectinput.keyUp("esc")
+    time.sleep(1)
+    pydirectinput.keyDown("esc")  # Back to the chair
+    time.sleep(0.1)
+    pydirectinput.keyUp("esc")
+    time.sleep(3)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_press)  # Leave the chair
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_release)
+    time.sleep(6)
+    # Cancel CEO
+    pydirectinput.keyDown("m")
+    time.sleep(0.1)
+    pydirectinput.keyUp("m")
+    time.sleep(0.1)
+    pydirectinput.keyDown("enter")
+    time.sleep(0.1)
+    pydirectinput.keyUp("enter")
+    time.sleep(0.1)
+    pydirectinput.keyDown("up")
+    time.sleep(0.1)
+    pydirectinput.keyUp("up")
+    time.sleep(0.1)
+    pydirectinput.keyDown("enter")
+    time.sleep(0.1)
+    pydirectinput.keyUp("enter")
 
 
 if __name__ == "__main__":
@@ -102,5 +129,5 @@ if __name__ == "__main__":
     print("Start")
     for j in range(10):
         nightclubBuyWeaponSupplies()
-        for k in tqdm(range(750)):
+        for k in tqdm(range(1000)):
             mouseMovement()
