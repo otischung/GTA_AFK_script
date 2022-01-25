@@ -1,34 +1,98 @@
-import keyboard
-from DirectKeys import *
+import autoit
+import keys
+import pydirectinput
 import random
 import time
+from tqdm import tqdm
 
 # https://www.youtube.com/watch?v=tWqbl9IUdCg
+# https://www.youtube.com/watch?v=VRsmPvu0xj0
 
-counter = 0
+
+def wasd():
+    # DirectKeys.PressKey(17)  # w
+    pydirectinput.keyDown("w")
+    # print("Press w")
+    time.sleep(random.randint(1, 5))
+    pydirectinput.keyUp("w")
+    # print("Release w")
+    pydirectinput.keyDown("a")
+    # print("Press a")
+    time.sleep(random.randint(1, 5))
+    pydirectinput.keyUp("a")
+    # print("Release a")
+    pydirectinput.keyDown("s")
+    # print("Press s")
+    time.sleep(random.randint(1, 5))
+    pydirectinput.keyUp("s")
+    # print("Release s")
+    pydirectinput.keyDown("d")
+    # print("Press d")
+    time.sleep(random.randint(1, 5))
+    pydirectinput.keyUp("d")
+    # print("Release d")
 
 
-def action():
-    PressKey(17)  # w
-    print("Press W")
+def mouseMovement():
+    autoit.mouse_move(1420, 830)
     time.sleep(random.randint(1, 5))
-    ReleaseKey(17)
-    print("Release W")
-    PressKey(30)  # a
-    print("Press A")
+    autoit.mouse_move(1500, 830)
     time.sleep(random.randint(1, 5))
-    ReleaseKey(30)
-    print("Release A")
-    PressKey(31)  # s
-    print("Press S")
+    autoit.mouse_move(1500, 900)
     time.sleep(random.randint(1, 5))
-    ReleaseKey(31)
-    print("Release S")
-    PressKey(32)  # d
-    print("Press D")
+    autoit.mouse_move(1420, 900)
     time.sleep(random.randint(1, 5))
-    ReleaseKey(32)
-    print("Release D")
+
+
+def nightclubBuyWeaponSupplies():
+    # pydirectinput.keyDown("enter")  # Access the master control terminal
+    # time.sleep(0.1)
+    # pydirectinput.keyUp("enter")
+    # time.sleep(3)
+    pydirectinput.keyDown("shift")  # Register to CEO
+    time.sleep(0.1)
+    pydirectinput.keyUp("shift")
+    time.sleep(2)
+    autoit.mouse_move(1280, 700)  # Gunrunning supplies
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
+    time.sleep(1)
+    autoit.mouse_move(1240, 860)  # Click to enter
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
+    time.sleep(1)
+    autoit.mouse_move(620, 670)  # Resupply
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
+    time.sleep(1)
+    autoit.mouse_move(1260, 1050)  # Buy supplies
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
+    time.sleep(1)
+    autoit.mouse_move(1420, 830)  # Confirm
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
+    time.sleep(0.1)
+    keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
+    time.sleep(3)
+    pydirectinput.keyDown("esc")  # Back to the main page of disruption
+    time.sleep(0.1)
+    pydirectinput.keyUp("esc")
+    time.sleep(1)
+    pydirectinput.keyDown("esc")  # Back to master control terminal
+    time.sleep(0.1)
+    pydirectinput.keyUp("esc")
+    # time.sleep(3)
+    # pydirectinput.keyDown("esc")  # Back to GTA main menu
+    # time.sleep(0.1)
+    # pydirectinput.keyUp("esc")
+    # time.sleep(1)
+    # pydirectinput.keyDown("esc")  # Back to the chair
+    # time.sleep(0.1)
+    # pydirectinput.keyUp("esc")
 
 
 if __name__ == "__main__":
@@ -36,7 +100,7 @@ if __name__ == "__main__":
         print(i + 1)
         time.sleep(1)
     print("Start")
-    while True:
-        counter += 1
-        print(f"{counter} cycle")
-        action()
+    for j in range(10):
+        nightclubBuyWeaponSupplies()
+        for k in tqdm(range(750)):
+            mouseMovement()
