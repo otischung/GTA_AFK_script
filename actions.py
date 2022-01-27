@@ -45,17 +45,11 @@ def stand_sit():
 
 
 def mouseMovement():
-    autoit.mouse_move(1420, 830)
-    time.sleep(random.randint(1, 5))
-    autoit.mouse_move(1500, 830)
-    time.sleep(random.randint(1, 5))
-    autoit.mouse_move(1500, 900)
-    time.sleep(random.randint(1, 5))
-    autoit.mouse_move(1420, 900)
+    autoit.mouse_move(random.randint(0, 2560), random.randint(0, 1440))
     time.sleep(random.randint(1, 5))
 
 
-def nightclubBuyWeaponSupplies():
+def accessMasterControlTerminal():
     pydirectinput.keyDown("e")  # Sit down
     time.sleep(0.1)
     pydirectinput.keyUp("e")
@@ -64,12 +58,18 @@ def nightclubBuyWeaponSupplies():
     time.sleep(0.1)
     pydirectinput.keyUp("enter")
     time.sleep(3)
+
+
+def CEO():
     autoit.mouse_move(1280, 700)  # Move to gunrunning supplies
     time.sleep(1)
     pydirectinput.keyDown("ctrlleft")  # Register to CEO
     time.sleep(0.1)
     pydirectinput.keyUp("ctrlleft")
     time.sleep(2)
+
+
+def getIntoDisruption():
     autoit.mouse_move(1280, 700)  # Gunrunning supplies
     keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
     time.sleep(0.1)
@@ -80,6 +80,9 @@ def nightclubBuyWeaponSupplies():
     time.sleep(0.1)
     keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
     time.sleep(1)
+
+
+def buyWeaponSupplies():
     autoit.mouse_move(620, 670)  # Resupply
     keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_press)
     time.sleep(0.1)
@@ -95,6 +98,9 @@ def nightclubBuyWeaponSupplies():
     time.sleep(0.1)
     keys.Keys().directMouse(buttons=keys.Keys().mouse_lb_release)
     time.sleep(3)
+
+
+def leaveChair():
     pydirectinput.keyDown("esc")  # Back to the main page of disruption
     time.sleep(0.1)
     pydirectinput.keyUp("esc")
@@ -115,7 +121,9 @@ def nightclubBuyWeaponSupplies():
     time.sleep(0.1)
     keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_release)
     time.sleep(6)
-    # Cancel CEO
+
+
+def cancelCEO():
     pydirectinput.keyDown("m")
     time.sleep(0.1)
     pydirectinput.keyUp("m")

@@ -10,9 +10,12 @@ if __name__ == "__main__":
         time.sleep(1)
     print("Start")
     for j in range(10):
-        actions.nightclubBuyWeaponSupplies()
+        # actions.accessMasterControlTerminal()
+        actions.CEO()
+        actions.getIntoDisruption()
+        actions.buyWeaponSupplies()
+        actions.leaveChair()
+        actions.cancelCEO()
+        actions.accessMasterControlTerminal()
         for k in tqdm(range(2800)):  # 8400s
-            pydirectinput.keyDown("f4")
-            time.sleep(0.1)
-            pydirectinput.keyUp("f4")
-            time.sleep(random.randint(1, 5))
+            actions.mouseMovement()

@@ -14,7 +14,11 @@ autoit.mouse_move(1280, 700)
 
 This script can help you use the Master Control Terminal in your Arcade.
 
-Stand beside the chair in front of the terminal then start the script.
+Stand beside the chair in front of the terminal. Then get access to Master Control Terminal.
+
+Finally, start the script below.
+
+![Master_Control_Terminal.png](./img/Master_Control_Terminal.png)
 
 ```bash
 python main.py
@@ -23,3 +27,5 @@ python main.py
 Switch back to GTA in 3-second countdown.
 
 The script will first buy gun supplies and wait 2hr 20min on average. This is the time for one-time supplies consuming.
+
+The script will repeat the statements above for 10 times.
