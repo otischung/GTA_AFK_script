@@ -14,11 +14,9 @@ autoit.mouse_move(1280, 700)
 
 This script can help you use the Master Control Terminal in your Arcade.
 
-Stand beside the chair in front of the terminal. Then get access to Master Control Terminal.
+Stand beside the chair in front of the terminal.
 
 Finally, start the script below.
-
-![Master_Control_Terminal.png](./img/Master_Control_Terminal.png)
 
 ```bash
 python main.py
