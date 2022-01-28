@@ -33,27 +33,16 @@ def wasd():
     # print("Release d")
 
 
-def stand_sit():
-    pydirectinput.keyDown("e")
-    time.sleep(0.1)
-    pydirectinput.keyUp("e")
-    time.sleep(random.randint(7, 15))
-    keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_press)
-    time.sleep(0.1)
-    keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_release)
-    time.sleep(random.randint(7, 15))
-
-
 def mouseMovement():
     autoit.mouse_move(random.randint(0, 2560), random.randint(0, 1440))
     time.sleep(random.randint(1, 5))
 
 
-def accessMasterControlTerminal():
+def accessMasterControlTerminal():  # Use 12.31s
     pydirectinput.keyDown("e")  # Sit down
     time.sleep(0.1)
     pydirectinput.keyUp("e")
-    time.sleep(7)
+    time.sleep(8)
     pydirectinput.keyDown("enter")  # Access the master control terminal
     time.sleep(0.1)
     pydirectinput.keyUp("enter")
@@ -100,15 +89,21 @@ def buyWeaponSupplies():
     time.sleep(3)
 
 
-def leaveChair():
+def fromSuppliesToDisruption():
     pydirectinput.keyDown("esc")  # Back to the main page of disruption
     time.sleep(0.1)
     pydirectinput.keyUp("esc")
     time.sleep(1)
+
+
+def fromDisruptionToMCT():
     pydirectinput.keyDown("esc")  # Back to master control terminal
     time.sleep(0.1)
     pydirectinput.keyUp("esc")
     time.sleep(3)
+
+
+def leaveChair():  # Use 15.14s
     pydirectinput.keyDown("esc")  # Back to GTA main menu
     time.sleep(0.1)
     pydirectinput.keyUp("esc")
@@ -121,6 +116,10 @@ def leaveChair():
     time.sleep(0.1)
     keys.Keys().directMouse(buttons=keys.Keys().mouse_rb_release)
     time.sleep(6)
+    pydirectinput.keyDown("s")  # Prevent standing on the table
+    time.sleep(0.4)
+    pydirectinput.keyUp("s")
+    time.sleep(1)
 
 
 def cancelCEO():
@@ -140,3 +139,10 @@ def cancelCEO():
     time.sleep(0.1)
     pydirectinput.keyUp("enter")
     time.sleep(7)
+
+
+def check_progress():  # Use 34.5s on average
+    accessMasterControlTerminal()
+    time.sleep(random.randint(5, 10))
+    leaveChair()
+    time.sleep(random.randint(1, 5))

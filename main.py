@@ -10,12 +10,14 @@ if __name__ == "__main__":
         time.sleep(1)
     print("Start")
     for j in range(10):
-        # actions.accessMasterControlTerminal()
+        actions.accessMasterControlTerminal()
         actions.CEO()
         actions.getIntoDisruption()
         actions.buyWeaponSupplies()
+        actions.fromSuppliesToDisruption()
+        actions.fromDisruptionToMCT()
         actions.leaveChair()
         actions.cancelCEO()
-        actions.accessMasterControlTerminal()
-        for k in tqdm(range(2800)):  # 8400s
-            actions.mouseMovement()
+        # actions.accessMasterControlTerminal()
+        for k in tqdm(range(260)):  # 8400s
+            actions.check_progress()
