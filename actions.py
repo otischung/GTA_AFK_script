@@ -1,6 +1,7 @@
 import autoit
 import keys
 import pydirectinput
+import pyautogui
 import random
 import time
 
@@ -12,25 +13,34 @@ import time
 def wasd():
     # DirectKeys.PressKey(17)  # w
     pydirectinput.keyDown("w")
-    # print("Press w")
-    time.sleep(random.randint(1, 5))
+    time.sleep(0.1)
     pydirectinput.keyUp("w")
-    # print("Release w")
+    time.sleep(random.randint(1, 5))
     pydirectinput.keyDown("a")
-    # print("Press a")
-    time.sleep(random.randint(1, 5))
+    time.sleep(0.1)
     pydirectinput.keyUp("a")
-    # print("Release a")
+    time.sleep(random.randint(1, 5))
     pydirectinput.keyDown("s")
-    # print("Press s")
-    time.sleep(random.randint(1, 5))
+    time.sleep(0.1)
     pydirectinput.keyUp("s")
-    # print("Release s")
-    pydirectinput.keyDown("d")
-    # print("Press d")
     time.sleep(random.randint(1, 5))
+    pydirectinput.keyDown("d")
+    time.sleep(0.1)
     pydirectinput.keyUp("d")
-    # print("Release d")
+    time.sleep(random.randint(1, 5))
+
+
+def kickPlayersInPublicSession():
+    pyautogui.keyDown("win")
+    time.sleep(0.1)
+    pyautogui.keyUp("win")
+    autoit.mouse_move(1280, 5)
+    autoit.mouse_click("right", 1280, 5)
+    time.sleep(13)
+    autoit.mouse_move(1200, 100)
+    autoit.mouse_click("left", 1200, 100)
+    autoit.mouse_click("right", 1200, 100)
+    time.sleep(0.1)
 
 
 def mouseMovement():

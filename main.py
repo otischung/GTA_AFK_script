@@ -10,6 +10,8 @@ if __name__ == "__main__":
         time.sleep(1)
     print("Start")
     for j in range(10):
+        # for k in tqdm(range(710)):  # 8400s
+        #     actions.wasd()
         actions.accessMasterControlTerminal()
         actions.CEO()
         actions.getIntoDisruption()
@@ -18,6 +20,7 @@ if __name__ == "__main__":
         actions.fromDisruptionToMCT()
         actions.leaveChair()
         actions.cancelCEO()
+        actions.kickPlayersInPublicSession()
         # actions.accessMasterControlTerminal()
-        for k in tqdm(range(260)):  # 8400s
-            actions.check_progress()
+        for k in tqdm(range(710)):  # 8400s
+            actions.wasd()

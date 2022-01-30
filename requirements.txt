@@ -1,3 +1,4 @@
 autoit
+pyautogui
 pydirectinput
 tqdm
